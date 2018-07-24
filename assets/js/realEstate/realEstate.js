@@ -1,5 +1,7 @@
 import React, { Component} from 'react'
 import ReactDOM from 'react-dom'
+import Header from './Header.js';
+
 
 class App extends Component {
   constructor () {
@@ -12,7 +14,10 @@ class App extends Component {
     console.log('swag')
   }
   render () {
-    return (<div>Real Estate</div>)
+    return (
+      <div>
+        <Header />
+      </div>)
   }
 }
 
