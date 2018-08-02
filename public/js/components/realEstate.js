@@ -385,7 +385,7 @@ var Listings = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'section',
-        { className: 'listings' },
+        { id: 'listings' },
         _react2.default.createElement(
           'section',
           { className: 'search-area' },
@@ -396,7 +396,7 @@ var Listings = function (_Component) {
           { className: 'sortby-area' },
           _react2.default.createElement(
             'div',
-            null,
+            { className: 'results' },
             '390 results found'
           ),
           _react2.default.createElement(
@@ -419,8 +419,8 @@ var Listings = function (_Component) {
             _react2.default.createElement(
               'div',
               { className: 'view' },
-              _react2.default.createElement('i', { className: 'fas fa-list' }),
-              _react2.default.createElement('i', { className: 'fas fa-th' })
+              _react2.default.createElement('i', { className: 'fa fa-list' }),
+              _react2.default.createElement('i', { className: 'fa fa-th' })
             )
           )
         ),
@@ -462,7 +462,7 @@ var Listings = function (_Component) {
                   _react2.default.createElement(
                     'div',
                     { className: 'floor-space' },
-                    _react2.default.createElement('i', { className: 'far fa-square' }),
+                    _react2.default.createElement('i', { className: 'fa fa-square' }),
                     _react2.default.createElement(
                       'span',
                       null,
@@ -472,7 +472,7 @@ var Listings = function (_Component) {
                   _react2.default.createElement(
                     'div',
                     { className: 'bedrooms' },
-                    _react2.default.createElement('i', { className: 'fas fa-bed' }),
+                    _react2.default.createElement('i', { className: 'fa fa-bed' }),
                     _react2.default.createElement(
                       'span',
                       null,
@@ -490,7 +490,7 @@ var Listings = function (_Component) {
                 null,
                 '$1000 / month'
               ),
-              _react2.default.createElement('i', { className: 'fas fa-map-marker-alt' }),
+              _react2.default.createElement('i', { className: 'fa fa-map-marker' }),
               _react2.default.createElement(
                 'span',
                 null,

@@ -12,22 +12,22 @@ export default class Listings extends Component {
   }
   render () {
     return (
-      <section className="listings">
+      <section id="listings">
 
         <section className="search-area">
           <input type="text" name="search" />
         </section>
 
         <section className="sortby-area">
-          <div>390 results found</div>
+          <div className="results">390 results found</div>
           <div className="sort-options">
             <select name="sortby" className="sortby">
               <option value="price-asc">Highest Price</option>
               <option value="price-dsc">Lowest Price</option>
             </select>
             <div className="view">
-              <i className="fas fa-list"></i>
-              <i className="fas fa-th"></i>
+              <i className="fa fa-list"></i>
+              <i className="fa fa-th"></i>
             </div>
           </div>
         </section>
@@ -44,11 +44,11 @@ export default class Listings extends Component {
                 </div>
                 <div className="listing-details">
                   <div className="floor-space">
-                    <i className="far fa-square"></i>
+                    <i className="fa fa-square"></i>
                     <span>1000 ft&sup2;</span>
                   </div>
                   <div className="bedrooms">
-                    <i className="fas fa-bed"></i>
+                    <i className="fa fa-bed"></i>
                     <span>3 Bedrooms</span>
                   </div>
                 </div>
@@ -56,7 +56,7 @@ export default class Listings extends Component {
             </div>
             <div className="bottom-info">
               <span>$1000 / month</span>
-              <i className="fas fa-map-marker-alt"></i>
+              <i className="fa fa-map-marker"></i>
               <span>Ridgewood NY</span>
             </div>
           </div>
