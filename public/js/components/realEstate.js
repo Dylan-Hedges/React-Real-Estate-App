@@ -429,72 +429,353 @@ var Listings = function (_Component) {
           { className: 'listings-results' },
           _react2.default.createElement(
             'div',
-            { className: 'listing' },
+            { className: 'col-md-3' },
             _react2.default.createElement(
               'div',
-              { className: 'listing-img' },
-              _react2.default.createElement(
-                'span',
-                { className: 'Address' },
-                'Address'
-              ),
+              { className: 'listing' },
               _react2.default.createElement(
                 'div',
-                { className: 'details' },
-                _react2.default.createElement('div', { className: 'user-img' }),
+                { className: 'listing-img' },
                 _react2.default.createElement(
-                  'div',
-                  { className: 'user-details' },
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'user-name' },
-                    'Nina Smith'
-                  ),
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'post-date' },
-                    '05/08/2017'
-                  )
+                  'span',
+                  { className: 'address' },
+                  '34 Dexi Hills'
                 ),
                 _react2.default.createElement(
                   'div',
-                  { className: 'listing-details' },
+                  { className: 'details' },
                   _react2.default.createElement(
                     'div',
-                    { className: 'floor-space' },
-                    _react2.default.createElement('i', { className: 'fa fa-square' }),
-                    _react2.default.createElement(
-                      'span',
-                      null,
-                      '1000 ft\xB2'
-                    )
+                    { className: 'col-md-3' },
+                    _react2.default.createElement('div', { className: 'user-img' })
                   ),
                   _react2.default.createElement(
                     'div',
-                    { className: 'bedrooms' },
-                    _react2.default.createElement('i', { className: 'fa fa-bed' }),
+                    { className: 'col-md-9' },
                     _react2.default.createElement(
-                      'span',
-                      null,
-                      '3 Bedrooms'
+                      'div',
+                      { className: 'user-details' },
+                      _react2.default.createElement(
+                        'span',
+                        { className: 'user-name' },
+                        'Nina Smith'
+                      ),
+                      _react2.default.createElement(
+                        'span',
+                        { className: 'post-date' },
+                        '05/08/2017'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'listing-details' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'floor-space' },
+                        _react2.default.createElement('i', { className: 'fa fa-square-o' }),
+                        _react2.default.createElement(
+                          'span',
+                          null,
+                          '1000 ft\xB2'
+                        )
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'bedrooms' },
+                        _react2.default.createElement('i', { className: 'fa fa-bed' }),
+                        _react2.default.createElement(
+                          'span',
+                          null,
+                          '3 Bedrooms'
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'view-btn' },
+                      'View Listing'
                     )
                   )
                 )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'bottom-info' },
+                _react2.default.createElement(
+                  'span',
+                  { className: 'price' },
+                  '$1000 / month '
+                ),
+                _react2.default.createElement(
+                  'span',
+                  { className: 'location' },
+                  _react2.default.createElement('i', { className: 'fa fa-map-marker' }),
+                  ' Ridgewood NY'
+                )
               )
-            ),
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-3' },
             _react2.default.createElement(
               'div',
-              { className: 'bottom-info' },
+              { className: 'listing' },
               _react2.default.createElement(
-                'span',
-                null,
-                '$1000 / month'
+                'div',
+                { className: 'listing-img' },
+                _react2.default.createElement(
+                  'span',
+                  { className: 'address' },
+                  '34 Dexi Hills'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'details' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'col-md-3' },
+                    _react2.default.createElement('div', { className: 'user-img' })
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'col-md-9' },
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'user-details' },
+                      _react2.default.createElement(
+                        'span',
+                        { className: 'user-name' },
+                        'Nina Smith'
+                      ),
+                      _react2.default.createElement(
+                        'span',
+                        { className: 'post-date' },
+                        '05/08/2017'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'listing-details' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'floor-space' },
+                        _react2.default.createElement('i', { className: 'fa fa-square-o' }),
+                        _react2.default.createElement(
+                          'span',
+                          null,
+                          '1000 ft\xB2'
+                        )
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'bedrooms' },
+                        _react2.default.createElement('i', { className: 'fa fa-bed' }),
+                        _react2.default.createElement(
+                          'span',
+                          null,
+                          '3 Bedrooms'
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'view-btn' },
+                      'View Listing'
+                    )
+                  )
+                )
               ),
-              _react2.default.createElement('i', { className: 'fa fa-map-marker' }),
               _react2.default.createElement(
-                'span',
-                null,
-                'Ridgewood NY'
+                'div',
+                { className: 'bottom-info' },
+                _react2.default.createElement(
+                  'span',
+                  { className: 'price' },
+                  '$1000 / month '
+                ),
+                _react2.default.createElement(
+                  'span',
+                  { className: 'location' },
+                  _react2.default.createElement('i', { className: 'fa fa-map-marker' }),
+                  ' Ridgewood NY'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-3' },
+            _react2.default.createElement(
+              'div',
+              { className: 'listing' },
+              _react2.default.createElement(
+                'div',
+                { className: 'listing-img' },
+                _react2.default.createElement(
+                  'span',
+                  { className: 'address' },
+                  '34 Dexi Hills'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'details' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'col-md-3' },
+                    _react2.default.createElement('div', { className: 'user-img' })
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'col-md-9' },
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'user-details' },
+                      _react2.default.createElement(
+                        'span',
+                        { className: 'user-name' },
+                        'Nina Smith'
+                      ),
+                      _react2.default.createElement(
+                        'span',
+                        { className: 'post-date' },
+                        '05/08/2017'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'listing-details' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'floor-space' },
+                        _react2.default.createElement('i', { className: 'fa fa-square-o' }),
+                        _react2.default.createElement(
+                          'span',
+                          null,
+                          '1000 ft\xB2'
+                        )
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'bedrooms' },
+                        _react2.default.createElement('i', { className: 'fa fa-bed' }),
+                        _react2.default.createElement(
+                          'span',
+                          null,
+                          '3 Bedrooms'
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'view-btn' },
+                      'View Listing'
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'bottom-info' },
+                _react2.default.createElement(
+                  'span',
+                  { className: 'price' },
+                  '$1000 / month '
+                ),
+                _react2.default.createElement(
+                  'span',
+                  { className: 'location' },
+                  _react2.default.createElement('i', { className: 'fa fa-map-marker' }),
+                  ' Ridgewood NY'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-3' },
+            _react2.default.createElement(
+              'div',
+              { className: 'listing' },
+              _react2.default.createElement(
+                'div',
+                { className: 'listing-img' },
+                _react2.default.createElement(
+                  'span',
+                  { className: 'address' },
+                  '34 Dexi Hills'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'details' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'col-md-3' },
+                    _react2.default.createElement('div', { className: 'user-img' })
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'col-md-9' },
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'user-details' },
+                      _react2.default.createElement(
+                        'span',
+                        { className: 'user-name' },
+                        'Nina Smith'
+                      ),
+                      _react2.default.createElement(
+                        'span',
+                        { className: 'post-date' },
+                        '05/08/2017'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'listing-details' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'floor-space' },
+                        _react2.default.createElement('i', { className: 'fa fa-square-o' }),
+                        _react2.default.createElement(
+                          'span',
+                          null,
+                          '1000 ft\xB2'
+                        )
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'bedrooms' },
+                        _react2.default.createElement('i', { className: 'fa fa-bed' }),
+                        _react2.default.createElement(
+                          'span',
+                          null,
+                          '3 Bedrooms'
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'view-btn' },
+                      'View Listing'
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'bottom-info' },
+                _react2.default.createElement(
+                  'span',
+                  { className: 'price' },
+                  '$1000 / month '
+                ),
+                _react2.default.createElement(
+                  'span',
+                  { className: 'location' },
+                  _react2.default.createElement('i', { className: 'fa fa-map-marker' }),
+                  ' Ridgewood NY'
+                )
               )
             )
           )
