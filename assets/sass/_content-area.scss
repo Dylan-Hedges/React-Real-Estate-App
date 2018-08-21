@@ -125,7 +125,6 @@ select {
       color: white;
       padding: 15px;
       position: relative;
-      background: url("http://decorationchannel.com/wp-content/uploads/2011/12/modern-house-with-glass-wall.jpg") no-repeat center center;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -147,11 +146,15 @@ select {
         }
       }
       .address{
+        font-size: 1.3rem;
+        //Capitalizes first letter of each word
+        text-transform: capitalize;
         position: absolute;
         bottom: 20px;
         opacity: 1;
         //Animation for transition
         transition: all 0.4s ease-in-out;
+        text-shadow: 0px 1px 4px rgba(91, 91, 91, 1);
       }
       .details{
         transition: all 0.4s ease-in-out;

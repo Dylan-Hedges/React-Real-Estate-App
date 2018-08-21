@@ -53,7 +53,7 @@ var listingsData = [
       'gym'
     ],
     homeType: 'Appartment',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/220x165/56590_11491_004.jpg'
+    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg'
   },
   {
     address: '12 Chicago Road',
@@ -109,7 +109,7 @@ var listingsData = [
       'study'
     ],
     homeType: 'Appartment',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/220x165/56590_11491_004.jpg'
+    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg'
   }
 ]
 
