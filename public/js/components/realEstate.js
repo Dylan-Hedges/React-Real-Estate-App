@@ -17,17 +17,17 @@ var listingsData = [{
   price: 500000,
   floorSpace: 700,
   extras: ['elevator', 'gym'],
-  homeType: 'Appartment',
+  homeType: 'Apartment',
   image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg'
 }, {
   address: '540 New York Road',
-  city: 'New York',
+  city: 'Ridgewood',
   state: 'NY',
   rooms: 1,
   price: 620000,
   floorSpace: 2000,
   extras: ['pool', 'gym'],
-  homeType: 'Appartment',
+  homeType: 'Studio',
   image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg'
 }, {
   address: '82 San Francisco Road',
@@ -37,7 +37,7 @@ var listingsData = [{
   price: 1220000,
   floorSpace: 4300,
   extras: ['garden', 'pool'],
-  homeType: 'Appartment',
+  homeType: 'House',
   image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56589_11491_003.jpg'
 }, {
   address: '102 Vancouver Avenue',
@@ -47,7 +47,7 @@ var listingsData = [{
   price: 2220000,
   floorSpace: 6000,
   extras: ['study', 'gym'],
-  homeType: 'Appartment',
+  homeType: 'Studio',
   image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg'
 }, {
   address: '12 Chicago Road',
@@ -57,7 +57,7 @@ var listingsData = [{
   price: 350000,
   floorSpace: 1200,
   extras: ['garden', 'gym'],
-  homeType: 'Appartment',
+  homeType: 'House',
   image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg'
 }, {
   address: '1234 Miami Street',
@@ -67,7 +67,7 @@ var listingsData = [{
   price: 320000,
   floorSpace: 1100,
   extras: ['pool', 'bar'],
-  homeType: 'Appartment',
+  homeType: 'Apartment',
   image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg'
 }, {
   address: '95 Texas Road',
@@ -77,17 +77,17 @@ var listingsData = [{
   price: 1500000,
   floorSpace: 5300,
   extras: ['gym', 'pool'],
-  homeType: 'Appartment',
+  homeType: 'Ranch',
   image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56589_11491_003.jpg'
 }, {
   address: '567 Arizona Avenue',
   city: 'Pheonix',
   state: 'AZ',
-  rooms: 6,
+  rooms: 3,
   price: 7220000,
   floorSpace: 6300,
   extras: ['garden', 'study'],
-  homeType: 'Appartment',
+  homeType: 'Ranch',
   image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg'
 }];
 
@@ -148,6 +148,9 @@ var App = function (_Component) {
     _this.state = {
       name: 'Joe',
       listingsData: _listingsData2.default,
+      city: 'All',
+      homeType: 'All',
+      bedrooms: 0,
       min_price: 0,
       max_price: 10000000,
       min_floor_space: 0,
@@ -174,7 +177,7 @@ var App = function (_Component) {
       var name = event.target.name;
       //Take the value of what changed
       var value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
-      //Adds(or updates) App state - 1st change = adds K/V "name of field: value" (e.g "neighbourhood: Maimai") to state, 2nd change = updates the states
+      //Adds(or updates) App state - 1st change = adds K/V "name of field: value" (e.g "city: Maimai") to state, 2nd change = updates the states
       this.setState(_defineProperty({}, name, value), function () {
         console.log(_this2.state);
         _this2.filteredData();
@@ -188,9 +191,19 @@ var App = function (_Component) {
       var _this3 = this;
 
       var newData = this.state.listingsData.filter(function (item) {
-        //Cant put && on new line, causes filters not to work
-        return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorSpace >= _this3.state.min_floor_space && item.floorSpace <= _this3.state.max_floor_space;
+        //Can't put && on new line, causes filters not to work
+        return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorSpace >= _this3.state.min_floor_space && item.floorSpace <= _this3.state.max_floor_space && item.rooms >= _this3.state.bedrooms;
       });
+      if (this.state.city != "All") {
+        newData = newData.filter(function (item) {
+          return item.city == _this3.state.city;
+        });
+      }
+      if (this.state.homeType != "All") {
+        newData = newData.filter(function (item) {
+          return item.homeType == _this3.state.homeType;
+        });
+      }
       this.setState({
         filteredData: newData
       });
@@ -276,8 +289,18 @@ var Filter = function (_Component) {
             'Filter'
           ),
           _react2.default.createElement(
+            'label',
+            { htmlFor: 'city' },
+            'City'
+          ),
+          _react2.default.createElement(
             'select',
-            { name: 'neighbourhood', className: 'filters neighbourhood', onChange: this.props.change },
+            { name: 'city', className: 'filters city', onChange: this.props.change },
+            _react2.default.createElement(
+              'option',
+              { value: 'All' },
+              'All'
+            ),
             _react2.default.createElement(
               'option',
               { value: 'Ridgewood' },
@@ -290,8 +313,18 @@ var Filter = function (_Component) {
             )
           ),
           _react2.default.createElement(
+            'label',
+            { htmlFor: 'homeType' },
+            'Home Type'
+          ),
+          _react2.default.createElement(
             'select',
-            { name: 'housetype', className: 'filters housetype', onChange: this.props.change },
+            { name: 'homeType', className: 'filters homeType', onChange: this.props.change },
+            _react2.default.createElement(
+              'option',
+              { value: 'All' },
+              'All Homes'
+            ),
             _react2.default.createElement(
               'option',
               { value: 'Ranch' },
@@ -314,27 +347,37 @@ var Filter = function (_Component) {
             )
           ),
           _react2.default.createElement(
+            'label',
+            { htmlFor: 'bedrooms' },
+            'Bedrooms'
+          ),
+          _react2.default.createElement(
             'select',
             { name: 'bedrooms', className: 'filters bedrooms', onChange: this.props.change },
             _react2.default.createElement(
               'option',
+              { value: '0' },
+              '0+ BR'
+            ),
+            _react2.default.createElement(
+              'option',
               { value: '1' },
-              '1 BR'
+              '1+ BR'
             ),
             _react2.default.createElement(
               'option',
               { value: '2' },
-              '2 BR'
+              '2+ BR'
             ),
             _react2.default.createElement(
               'option',
               { value: '3' },
-              '3 BR'
+              '3+ BR'
             ),
             _react2.default.createElement(
               'option',
               { value: '4' },
-              '4 BR'
+              '4+ BR'
             )
           ),
           _react2.default.createElement(

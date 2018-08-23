@@ -12,6 +12,9 @@ class App extends Component {
     this.state = {
       name: 'Joe',
       listingsData,
+      city: 'All',
+      homeType: 'All',
+      bedrooms: 0,
       min_price: 0,
       max_price: 10000000,
       min_floor_space: 0,
@@ -32,7 +35,7 @@ class App extends Component {
     var name = event.target.name;
     //Take the value of what changed
     var value = (event.target.type === 'checkbox') ? event.target.checked : event.target.value;
-    //Adds(or updates) App state - 1st change = adds K/V "name of field: value" (e.g "neighbourhood: Maimai") to state, 2nd change = updates the states
+    //Adds(or updates) App state - 1st change = adds K/V "name of field: value" (e.g "city: Maimai") to state, 2nd change = updates the states
     this.setState({
       [name]: value
     }, () => {
@@ -43,9 +46,19 @@ class App extends Component {
   //Filter - loops through every listing, compares to see if it is >= the filter number, if not it doesnt add it to the array (newData)
   filteredData(){
     var newData = this.state.listingsData.filter((item) => {
-      //Cant put && on new line, causes filters not to work
-      return item.price >= this.state.min_price && item.price <= this.state.max_price && item.floorSpace >= this.state.min_floor_space && item.floorSpace <= this.state.max_floor_space
+      //Can't put && on new line, causes filters not to work
+      return item.price >= this.state.min_price && item.price <= this.state.max_price && item.floorSpace >= this.state.min_floor_space && item.floorSpace <= this.state.max_floor_space && item.rooms >= this.state.bedrooms
     })
+    if(this.state.city != "All"){
+      newData = newData.filter((item) => {
+        return item.city == this.state.city
+      })
+    }
+    if(this.state.homeType != "All"){
+      newData = newData.filter((item) => {
+        return item.homeType == this.state.homeType
+      })
+    }
     this.setState({
       filteredData: newData
     });
