@@ -19,10 +19,12 @@ class App extends Component {
       elevator: false,
       swimming_pool: false,
       finished_basement: false,
-      gym: false
+      gym: false,
+      filteredData: listingsData
     }
     //2. Bind it to the class
     this.change = this.change.bind(this);
+    this.filteredData = this.filteredData.bind(this);
   }
   //1.Create the method - triggers everytime a change happens (passed to Filter.js)
   change(event){
@@ -34,8 +36,19 @@ class App extends Component {
     this.setState({
       [name]: value
     }, () => {
-      console.log(this.state);
+      console.log(this.state)
+      this.filteredData()
     })
+  }
+  //Filter - loops through every listing, compares to see if it is >= the filter number, if not it doesnt add it to the array (newData)
+  filteredData(){
+    var newData = this.state.listingsData.filter((item) => {
+      //Cant put && on new line, causes filters not to work
+      return item.price >= this.state.min_price && item.price <= this.state.max_price && item.floorSpace >= this.state.min_floor_space && item.floorSpace <= this.state.max_floor_space
+    })
+    this.setState({
+      filteredData: newData
+    });
   }
   render () {
     return (
@@ -43,7 +56,7 @@ class App extends Component {
         <Header />
         <section id="content-area">
           <Filter change={this.change} globalState={this.state}/>
-          <Listings listingsData={this.state.listingsData}/>
+          <Listings listingsData={this.state.filteredData}/>
         </section>
       </div>)
   }

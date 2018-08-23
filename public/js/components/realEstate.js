@@ -155,9 +155,11 @@ var App = function (_Component) {
       elevator: false,
       swimming_pool: false,
       finished_basement: false,
-      gym: false
+      gym: false,
+      filteredData: _listingsData2.default
       //2. Bind it to the class
     };_this.change = _this.change.bind(_this);
+    _this.filteredData = _this.filteredData.bind(_this);
     return _this;
   }
   //1.Create the method - triggers everytime a change happens (passed to Filter.js)
@@ -175,6 +177,22 @@ var App = function (_Component) {
       //Adds(or updates) App state - 1st change = adds K/V "name of field: value" (e.g "neighbourhood: Maimai") to state, 2nd change = updates the states
       this.setState(_defineProperty({}, name, value), function () {
         console.log(_this2.state);
+        _this2.filteredData();
+      });
+    }
+    //Filter - loops through every listing, compares to see if it is >= the filter number, if not it doesnt add it to the array (newData)
+
+  }, {
+    key: 'filteredData',
+    value: function filteredData() {
+      var _this3 = this;
+
+      var newData = this.state.listingsData.filter(function (item) {
+        //Cant put && on new line, causes filters not to work
+        return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorSpace >= _this3.state.min_floor_space && item.floorSpace <= _this3.state.max_floor_space;
+      });
+      this.setState({
+        filteredData: newData
       });
     }
   }, {
@@ -188,7 +206,7 @@ var App = function (_Component) {
           'section',
           { id: 'content-area' },
           _react2.default.createElement(_Filter2.default, { change: this.change, globalState: this.state }),
-          _react2.default.createElement(_Listings2.default, { listingsData: this.state.listingsData })
+          _react2.default.createElement(_Listings2.default, { listingsData: this.state.filteredData })
         )
       );
     }
@@ -539,6 +557,9 @@ var Listings = function (_Component) {
       var listingsData = this.props.listingsData;
       //"index" - passes in index number, used as the unique key for each element in the array (removes error, React uses it for updating)
 
+      if (listingsData == undefined || listingsData.length == 0) {
+        return "Sory your filter did not match any listings.";
+      }
       return listingsData.map(function (listing, index) {
         return _react2.default.createElement(
           'div',

@@ -13,6 +13,9 @@ export default class Listings extends Component {
   loopListings () {
     var {listingsData} = this.props;
     //"index" - passes in index number, used as the unique key for each element in the array (removes error, React uses it for updating)
+    if(listingsData == undefined || listingsData.length == 0) {
+      return "Sory your filter did not match any listings."
+    }
     return listingsData.map((listing, index) => {
       return (
         <div className="col-md-3" key={index}>
