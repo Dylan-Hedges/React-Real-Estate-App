@@ -25,12 +25,14 @@ class App extends Component {
       gym: false,
       filteredData: listingsData,
       populateFormsData: '',
-      sortby: 'price-dsc'
+      sortby: 'price-dsc',
+      view: 'long'
     }
     //2. Bind it to the class
     this.change = this.change.bind(this);
     this.filteredData = this.filteredData.bind(this);
     this.populateForms = this.populateForms.bind(this);
+    this.changeView = this.changeView.bind(this);
   }
   componentWillMount(){
     var listingsData = this.state.listingsData.sort((a , b) =>{
@@ -52,6 +54,11 @@ class App extends Component {
     }, () => {
       console.log(this.state)
       this.filteredData()
+    })
+  }
+  changeView(viewName){
+    this.setState({
+      view: viewName
     })
   }
   //Filter - loops through every listing, compares to see if it is >= the filter number, if not it doesnt add it to the array (newData)
@@ -128,7 +135,7 @@ class App extends Component {
         <Header />
         <section id="content-area">
           <Filter change={this.change} globalState={this.state} populateAction={this.populateForms}/>
-          <Listings listingsData={this.state.filteredData} change={this.change}/>
+          <Listings listingsData={this.state.filteredData} globalState={this.state} change={this.change} changeView={this.changeView}/>
         </section>
       </div>)
   }
