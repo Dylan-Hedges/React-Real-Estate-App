@@ -3,7 +3,7 @@ var listingsData = [
     address: '97 Toronto Avenue',
     city: 'Toronto',
     state: 'ON',
-    rooms: 1,
+    rooms: 0,
     price: 500000,
     floorSpace: 700,
     extras: [

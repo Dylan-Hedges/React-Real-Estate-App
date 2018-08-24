@@ -13,7 +13,7 @@ var listingsData = [{
   address: '97 Toronto Avenue',
   city: 'Toronto',
   state: 'ON',
-  rooms: 1,
+  rooms: 0,
   price: 500000,
   floorSpace: 700,
   extras: ['elevator', 'gym'],
@@ -129,6 +129,8 @@ var _listingsData2 = _interopRequireDefault(_listingsData);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -159,10 +161,12 @@ var App = function (_Component) {
       swimming_pool: false,
       finished_basement: false,
       gym: false,
-      filteredData: _listingsData2.default
+      filteredData: _listingsData2.default,
+      populateFormsData: ''
       //2. Bind it to the class
     };_this.change = _this.change.bind(_this);
     _this.filteredData = _this.filteredData.bind(_this);
+    _this.populateForms = _this.populateForms.bind(_this);
     return _this;
   }
   //1.Create the method - triggers everytime a change happens (passed to Filter.js)
@@ -190,22 +194,63 @@ var App = function (_Component) {
     value: function filteredData() {
       var _this3 = this;
 
+      //Filter price and floor space
       var newData = this.state.listingsData.filter(function (item) {
         //Can't put && on new line, causes filters not to work
         return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorSpace >= _this3.state.min_floor_space && item.floorSpace <= _this3.state.max_floor_space && item.rooms >= _this3.state.bedrooms;
       });
+      //Filters city
       if (this.state.city != "All") {
         newData = newData.filter(function (item) {
           return item.city == _this3.state.city;
         });
       }
+      //Filters house type
       if (this.state.homeType != "All") {
         newData = newData.filter(function (item) {
           return item.homeType == _this3.state.homeType;
         });
       }
+      //Updates the state and page
       this.setState({
         filteredData: newData
+      });
+    }
+  }, {
+    key: 'populateForms',
+    value: function populateForms() {
+      var _this4 = this;
+
+      //City - returns array with all the cities in the "cities" variable
+      var cities = this.state.listingsData.map(function (item) {
+        return item.city;
+      });
+      //Removes repeats - creates a Set (an object)
+      cities = new Set(cities);
+      //Turns the Set into an Array (using spread operator)
+      cities = [].concat(_toConsumableArray(cities));
+      console.log(cities);
+
+      //homeType
+      var homeTypes = this.state.listingsData.map(function (item) {
+        return item.homeType;
+      });
+      homeTypes = new Set(homeTypes);
+      homeTypes = [].concat(_toConsumableArray(homeTypes));
+      //bedrooms
+      var bedrooms = this.state.listingsData.map(function (item) {
+        return item.rooms;
+      });
+      bedrooms = new Set(bedrooms);
+      bedrooms = [].concat(_toConsumableArray(bedrooms));
+      this.setState({
+        populateFormsData: {
+          homeTypes: homeTypes,
+          bedrooms: bedrooms,
+          cities: cities
+        }
+      }, function () {
+        console.log(_this4.state);
       });
     }
   }, {
@@ -218,7 +263,7 @@ var App = function (_Component) {
         _react2.default.createElement(
           'section',
           { id: 'content-area' },
-          _react2.default.createElement(_Filter2.default, { change: this.change, globalState: this.state }),
+          _react2.default.createElement(_Filter2.default, { change: this.change, globalState: this.state, populateAction: this.populateForms }),
           _react2.default.createElement(_Listings2.default, { listingsData: this.state.filteredData })
         )
       );
@@ -269,12 +314,67 @@ var Filter = function (_Component) {
     _this.state = {
       name: 'Joe'
     };
+    _this.cities = _this.cities.bind(_this);
+    _this.homeTypes = _this.homeTypes.bind(_this);
+    _this.bedrooms = _this.bedrooms.bind(_this);
     return _this;
   }
-  //"onChange={this.props.change}" onChange is default JS method (do something on a change),in this case whenever the user makes a change execute the "change" method which is passed in as props from realEsate.js
-
 
   _createClass(Filter, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.props.populateAction();
+    }
+  }, {
+    key: 'cities',
+    value: function cities() {
+      if (this.props.globalState.populateFormsData.cities != undefined) {
+        var cities = this.props.globalState.populateFormsData.cities;
+
+        return cities.map(function (item) {
+          return _react2.default.createElement(
+            'option',
+            { key: item, value: item },
+            item
+          );
+        });
+      }
+    }
+  }, {
+    key: 'homeTypes',
+    value: function homeTypes() {
+      if (this.props.globalState.populateFormsData.homeTypes != undefined) {
+        var homeTypes = this.props.globalState.populateFormsData.homeTypes;
+
+        return homeTypes.map(function (item) {
+          return _react2.default.createElement(
+            'option',
+            { key: item, value: item },
+            item
+          );
+        });
+      }
+    }
+  }, {
+    key: 'bedrooms',
+    value: function bedrooms() {
+      if (this.props.globalState.populateFormsData.bedrooms != undefined) {
+        var bedrooms = this.props.globalState.populateFormsData.bedrooms;
+
+        return bedrooms.map(function (item) {
+          return _react2.default.createElement(
+            'option',
+            { key: item, value: item },
+            item,
+            '+ BR'
+          );
+        });
+      }
+    }
+
+    //"onChange={this.props.change}" onChange is default JS method (do something on a change),in this case whenever the user makes a change execute the "change" method which is passed in as props from realEsate.js
+
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -301,16 +401,7 @@ var Filter = function (_Component) {
               { value: 'All' },
               'All'
             ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Ridgewood' },
-              'Ridgewood'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Miami' },
-              'Miami'
-            )
+            this.cities()
           ),
           _react2.default.createElement(
             'label',
@@ -325,26 +416,7 @@ var Filter = function (_Component) {
               { value: 'All' },
               'All Homes'
             ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Ranch' },
-              'Ranch'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Apartment' },
-              'Apartment'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Studio' },
-              'Studio'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'House' },
-              'House'
-            )
+            this.homeTypes()
           ),
           _react2.default.createElement(
             'label',
@@ -354,31 +426,7 @@ var Filter = function (_Component) {
           _react2.default.createElement(
             'select',
             { name: 'bedrooms', className: 'filters bedrooms', onChange: this.props.change },
-            _react2.default.createElement(
-              'option',
-              { value: '0' },
-              '0+ BR'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: '1' },
-              '1+ BR'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: '2' },
-              '2+ BR'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: '3' },
-              '3+ BR'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: '4' },
-              '4+ BR'
-            )
+            this.bedrooms()
           ),
           _react2.default.createElement(
             'div',
