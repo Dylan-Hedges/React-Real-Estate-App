@@ -164,7 +164,8 @@ var App = function (_Component) {
       filteredData: _listingsData2.default,
       populateFormsData: '',
       sortby: 'price-dsc',
-      view: 'long'
+      view: 'long',
+      search: ''
       //2. Bind it to the class
     };_this.change = _this.change.bind(_this);
     _this.filteredData = _this.filteredData.bind(_this);
@@ -231,14 +232,27 @@ var App = function (_Component) {
           return item.homeType == _this3.state.homeType;
         });
       }
+      //Filters on price descending
       if (this.state.sortby == 'price-dsc') {
         newData = newData.sort(function (a, b) {
           return a.price - b.price;
         });
       }
+      //Filters on price ascending
       if (this.state.sortby == 'price-asc') {
         newData = newData.sort(function (a, b) {
           return b.price - a.price;
+        });
+      }
+      //Filters on search
+      if (this.state.search != '') {
+        newData = newData.filter(function (item) {
+          var city = item.city.toLowerCase();
+          var searchText = _this3.state.search.toLowerCase();
+          var n = city.match(searchText);
+          if (n != null) {
+            return true;
+          }
         });
       }
       //Updates the state and page
@@ -885,7 +899,7 @@ var Listings = function (_Component) {
         _react2.default.createElement(
           'section',
           { className: 'search-area' },
-          _react2.default.createElement('input', { type: 'text', name: 'search' })
+          _react2.default.createElement('input', { type: 'text', name: 'search', onChange: this.props.change })
         ),
         _react2.default.createElement(
           'section',
