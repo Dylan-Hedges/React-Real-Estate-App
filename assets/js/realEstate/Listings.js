@@ -36,11 +36,11 @@ export default class Listings extends Component {
                        <div className="listing-details">
                          <div className="floor-space">
                            <i className="fa fa-square-o"></i>
-                           <span>1000 ft&sup2;</span>
+                           <span>{listing.floorSpace} ft&sup2;</span>
                         </div>
                         <div className="bedrooms">
                            <i className="fa fa-bed"></i>
-                           <span>{listing.bedrooms} Bedrooms</span>
+                           <span>{listing.rooms} Bedrooms</span>
                         </div>
                        </div>
                        <div className="view-btn">
@@ -77,11 +77,11 @@ export default class Listings extends Component {
                      <div className="listing-details">
                        <div className="floor-space">
                          <i className="fa fa-square-o"></i>
-                         <span>1000 ft&sup2;</span>
+                         <span>{listing.floorSpace} ft&sup2;</span>
                       </div>
                       <div className="bedrooms">
                          <i className="fa fa-bed"></i>
-                         <span>{listing.bedrooms} Bedrooms</span>
+                         <span>{listing.rooms} Bedrooms</span>
                       </div>
                      </div>
                      <div className="view-btn">
@@ -110,7 +110,7 @@ export default class Listings extends Component {
           <input type="text" name="search" onChange={this.props.change}/>
         </section>
         <section className="sortby-area">
-          <div className="results">390 results found</div>
+          <div className="results">{this.props.globalState.filteredData.length} results found</div>
           <div className="sort-options">
             <select name="sortby" className="sortby" onChange={this.props.change}>
               <option value="price-dsc">Lowest Price</option>
@@ -126,6 +126,7 @@ export default class Listings extends Component {
           {this.loopListings()}
         </section>
         <section id="pagination">
+        <div className="row">
           <ul className="pages">
             <li>Prev</li>
             <li className="active">1</li>
@@ -135,6 +136,7 @@ export default class Listings extends Component {
             <li>5</li>
             <li>Next</li>
           </ul>
+        </div>
         </section>
       </section>
     )
