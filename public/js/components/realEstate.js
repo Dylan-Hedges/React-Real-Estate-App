@@ -193,7 +193,7 @@ var App = function (_Component) {
 
       //Take the name of what changed
       var name = event.target.name;
-      //Take the value of what changed
+      //Take the value of what changed (if checkbox = true, then )
       var value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
       //Adds(or updates) App state - 1st change = adds K/V "name of field: value" (e.g "city: Maimai") to state, 2nd change = updates the states
       this.setState(_defineProperty({}, name, value), function () {
@@ -253,6 +253,36 @@ var App = function (_Component) {
           if (n != null) {
             return true;
           }
+        });
+      }
+      if (this.state.elevator === true) {
+        var filter = 'elevator';
+        newData = newData.filter(function (item) {
+          return item.extras.indexOf(filter) >= 0;
+        });
+      }
+      if (this.state.gym === true) {
+        var _filter = 'gym';
+        newData = newData.filter(function (item) {
+          return item.extras.indexOf(_filter) >= 0;
+        });
+      }
+      if (this.state.pool === true) {
+        var _filter2 = 'pool';
+        newData = newData.filter(function (item) {
+          return item.extras.indexOf(_filter2) >= 0;
+        });
+      }
+      if (this.state.study === true) {
+        var _filter3 = 'study';
+        newData = newData.filter(function (item) {
+          return item.extras.indexOf(_filter3) >= 0;
+        });
+      }
+      if (this.state.garden === true) {
+        var _filter4 = 'garden';
+        newData = newData.filter(function (item) {
+          return item.extras.indexOf(_filter4) >= 0;
         });
       }
       //Updates the state and page
@@ -519,9 +549,9 @@ var Filter = function (_Component) {
               _react2.default.createElement(
                 'span',
                 null,
-                'Swimming Pool'
+                'Pool'
               ),
-              _react2.default.createElement('input', { name: 'swimming_pool', value: 'swimming_pool', type: 'checkbox', onChange: this.props.change })
+              _react2.default.createElement('input', { name: 'pool', value: 'pool', type: 'checkbox', onChange: this.props.change })
             ),
             _react2.default.createElement(
               'label',
@@ -529,9 +559,9 @@ var Filter = function (_Component) {
               _react2.default.createElement(
                 'span',
                 null,
-                'Finished Basement'
+                'Study'
               ),
-              _react2.default.createElement('input', { name: 'finished_basement', value: 'finished basement', type: 'checkbox', onChange: this.props.change })
+              _react2.default.createElement('input', { name: 'study', value: 'study', type: 'checkbox', onChange: this.props.change })
             ),
             _react2.default.createElement(
               'label',
@@ -542,6 +572,16 @@ var Filter = function (_Component) {
                 'Gym'
               ),
               _react2.default.createElement('input', { name: 'gym', value: 'gym', type: 'checkbox', onChange: this.props.change })
+            ),
+            _react2.default.createElement(
+              'label',
+              { htmlFor: 'extras' },
+              _react2.default.createElement(
+                'span',
+                null,
+                'Garden'
+              ),
+              _react2.default.createElement('input', { name: 'garden', value: 'garden', type: 'checkbox', onChange: this.props.change })
             )
           )
         )

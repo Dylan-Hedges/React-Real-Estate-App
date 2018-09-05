@@ -47,8 +47,8 @@ class App extends Component {
   change(event){
     //Take the name of what changed
     var name = event.target.name;
-    //Take the value of what changed
-    var value = (event.target.type === 'checkbox') ? event.target.checked : event.target.value;
+    //Take the value of what changed (if checkbox = true, then )
+    var value = (event.target.type === 'checkbox') ? event.target.checked : event.target.value
     //Adds(or updates) App state - 1st change = adds K/V "name of field: value" (e.g "city: Maimai") to state, 2nd change = updates the states
     this.setState({
       [name]: value
@@ -102,6 +102,36 @@ class App extends Component {
         if(n != null){
           return true
         }
+      })
+    }
+    if(this.state.elevator === true){
+      const filter = 'elevator';
+      newData = newData.filter((item) => {
+        return (item.extras.indexOf(filter) >= 0)
+      })
+    }
+    if(this.state.gym=== true){
+      const filter = 'gym';
+      newData = newData.filter((item) => {
+        return (item.extras.indexOf(filter) >= 0)
+      })
+    }
+    if(this.state.pool === true){
+      const filter = 'pool';
+      newData = newData.filter((item) => {
+        return (item.extras.indexOf(filter) >= 0)
+      })
+    }
+    if(this.state.study === true){
+      const filter = 'study';
+      newData = newData.filter((item) => {
+        return (item.extras.indexOf(filter) >= 0)
+      })
+    }
+    if(this.state.garden === true){
+      const filter = 'garden';
+      newData = newData.filter((item) => {
+        return (item.extras.indexOf(filter) >= 0)
       })
     }
     //Updates the state and page

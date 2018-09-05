@@ -43,7 +43,7 @@ export default class Filter extends Component {
       })
     }
   }
-  
+
   //"onChange={this.props.change}" onChange is default JS method (do something on a change),in this case whenever the user makes a change execute the "change" method which is passed in as props from realEsate.js
   render () {
     return (
@@ -83,16 +83,20 @@ export default class Filter extends Component {
             <input name="elevator" value="elevator" type="checkbox" onChange={this.props.change}/>
           </label>
           <label htmlFor="extras">
-            <span>Swimming Pool</span>
-            <input name="swimming_pool" value="swimming_pool" type="checkbox" onChange={this.props.change}/>
+            <span>Pool</span>
+            <input name="pool" value="pool" type="checkbox" onChange={this.props.change}/>
           </label>
           <label htmlFor="extras">
-            <span>Finished Basement</span>
-            <input name="finished_basement" value="finished basement" type="checkbox" onChange={this.props.change}/>
+            <span>Study</span>
+            <input name="study" value="study" type="checkbox" onChange={this.props.change}/>
           </label>
           <label htmlFor="extras">
             <span>Gym</span>
             <input name="gym" value="gym" type="checkbox" onChange={this.props.change}/>
+          </label>
+          <label htmlFor="extras">
+            <span>Garden</span>
+            <input name="garden" value="garden" type="checkbox" onChange={this.props.change}/>
           </label>
         </div>
         </div>
