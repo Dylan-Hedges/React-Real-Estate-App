@@ -450,18 +450,13 @@ var Filter = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         "section",
-        { id: "filter" },
+        { id: "filter", className: "col-2 col-sm-2 col-md-2" },
         _react2.default.createElement(
           "div",
           { className: "inside" },
           _react2.default.createElement(
-            "h4",
-            null,
-            "Filter"
-          ),
-          _react2.default.createElement(
             "label",
-            { htmlFor: "city" },
+            { htmlFor: "city", className: "title" },
             "City"
           ),
           _react2.default.createElement(
@@ -476,7 +471,7 @@ var Filter = function (_Component) {
           ),
           _react2.default.createElement(
             "label",
-            { htmlFor: "homeType" },
+            { htmlFor: "homeType", className: "title" },
             "Home Type"
           ),
           _react2.default.createElement(
@@ -491,7 +486,7 @@ var Filter = function (_Component) {
           ),
           _react2.default.createElement(
             "label",
-            { htmlFor: "bedrooms" },
+            { htmlFor: "bedrooms", className: "title" },
             "Bedrooms"
           ),
           _react2.default.createElement(
@@ -632,9 +627,6 @@ var Header = function (_Component) {
       console.log('swag');
     };
 
-    _this.state = {
-      name: 'Joe'
-    };
     return _this;
   }
 
@@ -646,40 +638,49 @@ var Header = function (_Component) {
         null,
         _react2.default.createElement(
           'div',
-          null,
+          { className: 'leftNav' },
           _react2.default.createElement(
             'a',
             { href: '#', className: 'logo' },
+            _react2.default.createElement('i', { className: 'fa fa-home' })
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
             'Everyday Homes'
           )
         ),
         _react2.default.createElement(
-          'nav',
-          null,
+          'div',
+          { className: 'rightNav' },
           _react2.default.createElement(
-            'a',
-            { href: '#' },
-            'Buy'
-          ),
-          _react2.default.createElement(
-            'a',
-            { href: '#' },
-            'Sell'
-          ),
-          _react2.default.createElement(
-            'a',
-            { href: '#' },
-            'Rent'
-          ),
-          _react2.default.createElement(
-            'a',
-            { href: '#' },
-            'About'
-          ),
-          _react2.default.createElement(
-            'a',
-            { href: '#' },
-            'Contact'
+            'nav',
+            null,
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              'Buy'
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              'Sell'
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              'Rent'
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              'About'
+            ),
+            _react2.default.createElement(
+              'a',
+              { href: '#' },
+              'Contact'
+            )
           )
         )
       );
@@ -823,6 +824,7 @@ var Listings = function (_Component) {
                 _react2.default.createElement(
                   'span',
                   { className: 'price' },
+                  '$',
                   listing.price
                 ),
                 _react2.default.createElement(
@@ -940,7 +942,7 @@ var Listings = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         'section',
-        { id: 'listings' },
+        { id: 'listings', className: 'col-10 col-sm-10 col-md-10 col-lg-10' },
         _react2.default.createElement(
           'section',
           { className: 'search-area' },

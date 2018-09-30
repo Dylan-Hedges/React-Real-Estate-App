@@ -47,7 +47,7 @@ export default class Listings extends Component {
                    </div>
                  </div>
                  <div className="bottom-info">
-                   <span className="price">{listing.price}</span>
+                   <span className="price">${listing.price}</span>
                    <span className="location">
                      <i className="fa fa-map-marker"></i> {listing.city} {listing.state}
                    </span>
@@ -102,7 +102,7 @@ export default class Listings extends Component {
 
   render () {
     return (
-      <section id="listings">
+      <section id="listings" className="col-10 col-sm-10 col-md-10 col-lg-10">
         <section className="search-area">
           <input type="text" name="search" placeholder="Find your perfect home" onChange={this.props.change}/>
         </section>

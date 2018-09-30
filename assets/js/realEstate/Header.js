@@ -4,9 +4,6 @@ import ReactDOM from 'react-dom'
 export default class Header extends Component {
   constructor () {
     super()
-    this.state = {
-      name: 'Joe'
-    }
   }
   clickedBtn = () => {
     console.log('swag')
@@ -14,18 +11,22 @@ export default class Header extends Component {
   render () {
     return (
       <header>
-      <div>
-        <a href="#" className="logo">
-          Everyday Homes
-        </a>
-      </div>
-        <nav>
-          <a href="#">Buy</a>
-          <a href="#">Sell</a>
-          <a href="#">Rent</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-        </nav>
-      </header>)
+        <div className="leftNav">
+          <a href="#" className="logo">
+            <i className="fa fa-home"></i>
+          </a>
+          <p>Everyday Homes</p>
+        </div>
+        <div className="rightNav">
+          <nav>
+            <a href="#">Buy</a>
+            <a href="#">Sell</a>
+            <a href="#">Rent</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+      </header>
+    )
   }
 }
