@@ -148,7 +148,6 @@ var App = function (_Component) {
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
 
     _this.state = {
-      name: 'Joe',
       listingsData: _listingsData2.default,
       city: 'All',
       homeType: 'All',
@@ -164,7 +163,7 @@ var App = function (_Component) {
       filteredData: _listingsData2.default,
       populateFormsData: '',
       sortby: 'price-dsc',
-      view: 'long',
+      view: 'box',
       search: ''
       //2. Bind it to the class
     };_this.change = _this.change.bind(_this);
@@ -386,9 +385,6 @@ var Filter = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Filter.__proto__ || Object.getPrototypeOf(Filter)).call(this));
 
-    _this.state = {
-      name: 'Joe'
-    };
     _this.cities = _this.cities.bind(_this);
     _this.homeTypes = _this.homeTypes.bind(_this);
     _this.bedrooms = _this.bedrooms.bind(_this);
@@ -396,19 +392,19 @@ var Filter = function (_Component) {
   }
 
   _createClass(Filter, [{
-    key: 'componentWillMount',
+    key: "componentWillMount",
     value: function componentWillMount() {
       this.props.populateAction();
     }
   }, {
-    key: 'cities',
+    key: "cities",
     value: function cities() {
       if (this.props.globalState.populateFormsData.cities != undefined) {
         var cities = this.props.globalState.populateFormsData.cities;
 
         return cities.map(function (item) {
           return _react2.default.createElement(
-            'option',
+            "option",
             { key: item, value: item },
             item
           );
@@ -416,14 +412,14 @@ var Filter = function (_Component) {
       }
     }
   }, {
-    key: 'homeTypes',
+    key: "homeTypes",
     value: function homeTypes() {
       if (this.props.globalState.populateFormsData.homeTypes != undefined) {
         var homeTypes = this.props.globalState.populateFormsData.homeTypes;
 
         return homeTypes.map(function (item) {
           return _react2.default.createElement(
-            'option',
+            "option",
             { key: item, value: item },
             item
           );
@@ -431,17 +427,17 @@ var Filter = function (_Component) {
       }
     }
   }, {
-    key: 'bedrooms',
+    key: "bedrooms",
     value: function bedrooms() {
       if (this.props.globalState.populateFormsData.bedrooms != undefined) {
         var bedrooms = this.props.globalState.populateFormsData.bedrooms;
 
         return bedrooms.map(function (item) {
           return _react2.default.createElement(
-            'option',
+            "option",
             { key: item, value: item },
             item,
-            '+ BR'
+            "+ BR"
           );
         });
       }
@@ -450,138 +446,138 @@ var Filter = function (_Component) {
     //"onChange={this.props.change}" onChange is default JS method (do something on a change),in this case whenever the user makes a change execute the "change" method which is passed in as props from realEsate.js
 
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       return _react2.default.createElement(
-        'section',
-        { id: 'filter' },
+        "section",
+        { id: "filter" },
         _react2.default.createElement(
-          'div',
-          { className: 'inside' },
+          "div",
+          { className: "inside" },
           _react2.default.createElement(
-            'h4',
+            "h4",
             null,
-            'Filter'
+            "Filter"
           ),
           _react2.default.createElement(
-            'label',
-            { htmlFor: 'city' },
-            'City'
+            "label",
+            { htmlFor: "city" },
+            "City"
           ),
           _react2.default.createElement(
-            'select',
-            { name: 'city', className: 'filters city', onChange: this.props.change },
+            "select",
+            { name: "city", className: "filters city", onChange: this.props.change },
             _react2.default.createElement(
-              'option',
-              { value: 'All' },
-              'All'
+              "option",
+              { value: "All" },
+              "All"
             ),
             this.cities()
           ),
           _react2.default.createElement(
-            'label',
-            { htmlFor: 'homeType' },
-            'Home Type'
+            "label",
+            { htmlFor: "homeType" },
+            "Home Type"
           ),
           _react2.default.createElement(
-            'select',
-            { name: 'homeType', className: 'filters homeType', onChange: this.props.change },
+            "select",
+            { name: "homeType", className: "filters homeType", onChange: this.props.change },
             _react2.default.createElement(
-              'option',
-              { value: 'All' },
-              'All Homes'
+              "option",
+              { value: "All" },
+              "All Homes"
             ),
             this.homeTypes()
           ),
           _react2.default.createElement(
-            'label',
-            { htmlFor: 'bedrooms' },
-            'Bedrooms'
+            "label",
+            { htmlFor: "bedrooms" },
+            "Bedrooms"
           ),
           _react2.default.createElement(
-            'select',
-            { name: 'bedrooms', className: 'filters bedrooms', onChange: this.props.change },
+            "select",
+            { name: "bedrooms", className: "filters bedrooms", onChange: this.props.change },
             this.bedrooms()
           ),
           _react2.default.createElement(
-            'div',
-            { className: 'filters price' },
+            "div",
+            { className: "filters price" },
             _react2.default.createElement(
-              'span',
-              { className: 'title' },
-              'Price'
+              "span",
+              { className: "title" },
+              "Price"
             ),
-            _react2.default.createElement('input', { type: 'text', name: 'min_price', className: 'min-price', onChange: this.props.change, value: this.props.globalState.min_price }),
-            _react2.default.createElement('input', { type: 'text', name: 'max_price', className: 'max-price', onChange: this.props.change, value: this.props.globalState.max_price })
+            _react2.default.createElement("input", { type: "text", name: "min_price", className: "min-price", onChange: this.props.change, value: this.props.globalState.min_price }),
+            _react2.default.createElement("input", { type: "text", name: "max_price", className: "max-price", onChange: this.props.change, value: this.props.globalState.max_price })
           ),
           _react2.default.createElement(
-            'div',
-            { className: 'filters floor-space' },
+            "div",
+            { className: "filters floor-space" },
             _react2.default.createElement(
-              'span',
-              { className: 'title' },
-              'Floor Space'
+              "span",
+              { className: "title" },
+              "Floor Space"
             ),
-            _react2.default.createElement('input', { type: 'text', name: 'min_floor_space', className: 'min-floor-space', onChange: this.props.change, value: this.props.globalState.min_floor_space }),
-            _react2.default.createElement('input', { type: 'text', name: 'max_floor_space', className: 'max-floor-space', onChange: this.props.change, value: this.props.globalState.max_floor_space })
+            _react2.default.createElement("input", { type: "text", name: "min_floor_space", className: "min-floor-space", onChange: this.props.change, value: this.props.globalState.min_floor_space }),
+            _react2.default.createElement("input", { type: "text", name: "max_floor_space", className: "max-floor-space", onChange: this.props.change, value: this.props.globalState.max_floor_space })
           ),
           _react2.default.createElement(
-            'div',
-            { className: 'filters extras' },
+            "div",
+            { className: "filters extras" },
             _react2.default.createElement(
-              'span',
-              { className: 'title' },
-              'Extras'
+              "span",
+              { className: "title" },
+              "Extras"
             ),
             _react2.default.createElement(
-              'label',
-              { htmlFor: 'extras' },
+              "label",
+              { htmlFor: "extras" },
               _react2.default.createElement(
-                'span',
+                "span",
                 null,
-                'Elevators'
+                "Elevators"
               ),
-              _react2.default.createElement('input', { name: 'elevator', value: 'elevator', type: 'checkbox', onChange: this.props.change })
+              _react2.default.createElement("input", { name: "elevator", value: "elevator", type: "checkbox", onChange: this.props.change })
             ),
             _react2.default.createElement(
-              'label',
-              { htmlFor: 'extras' },
+              "label",
+              { htmlFor: "extras" },
               _react2.default.createElement(
-                'span',
+                "span",
                 null,
-                'Pool'
+                "Pool"
               ),
-              _react2.default.createElement('input', { name: 'pool', value: 'pool', type: 'checkbox', onChange: this.props.change })
+              _react2.default.createElement("input", { name: "pool", value: "pool", type: "checkbox", onChange: this.props.change })
             ),
             _react2.default.createElement(
-              'label',
-              { htmlFor: 'extras' },
+              "label",
+              { htmlFor: "extras" },
               _react2.default.createElement(
-                'span',
+                "span",
                 null,
-                'Study'
+                "Study"
               ),
-              _react2.default.createElement('input', { name: 'study', value: 'study', type: 'checkbox', onChange: this.props.change })
+              _react2.default.createElement("input", { name: "study", value: "study", type: "checkbox", onChange: this.props.change })
             ),
             _react2.default.createElement(
-              'label',
-              { htmlFor: 'extras' },
+              "label",
+              { htmlFor: "extras" },
               _react2.default.createElement(
-                'span',
+                "span",
                 null,
-                'Gym'
+                "Gym"
               ),
-              _react2.default.createElement('input', { name: 'gym', value: 'gym', type: 'checkbox', onChange: this.props.change })
+              _react2.default.createElement("input", { name: "gym", value: "gym", type: "checkbox", onChange: this.props.change })
             ),
             _react2.default.createElement(
-              'label',
-              { htmlFor: 'extras' },
+              "label",
+              { htmlFor: "extras" },
               _react2.default.createElement(
-                'span',
+                "span",
                 null,
-                'Garden'
+                "Garden"
               ),
-              _react2.default.createElement('input', { name: 'garden', value: 'garden', type: 'checkbox', onChange: this.props.change })
+              _react2.default.createElement("input", { name: "garden", value: "garden", type: "checkbox", onChange: this.props.change })
             )
           )
         )
@@ -650,8 +646,12 @@ var Header = function (_Component) {
         null,
         _react2.default.createElement(
           'div',
-          { className: 'logo' },
-          ' Logo '
+          null,
+          _react2.default.createElement(
+            'a',
+            { href: '#', className: 'logo' },
+            'Everyday Homes'
+          )
         ),
         _react2.default.createElement(
           'nav',
@@ -659,22 +659,27 @@ var Header = function (_Component) {
           _react2.default.createElement(
             'a',
             { href: '#' },
-            'Create Ads'
+            'Buy'
           ),
           _react2.default.createElement(
             'a',
             { href: '#' },
-            'About Us'
+            'Sell'
           ),
           _react2.default.createElement(
             'a',
             { href: '#' },
-            'Login'
+            'Rent'
           ),
           _react2.default.createElement(
             'a',
-            { href: '#', className: 'register-btn' },
-            'Register'
+            { href: '#' },
+            'About'
+          ),
+          _react2.default.createElement(
+            'a',
+            { href: '#' },
+            'Contact'
           )
         )
       );
@@ -718,12 +723,10 @@ var Listings = function (_Component) {
   function Listings() {
     _classCallCheck(this, Listings);
 
+    //Binds the loopListings method to the "Listings" class so we can use it (knows which "this we are talking about")
     var _this = _possibleConstructorReturn(this, (Listings.__proto__ || Object.getPrototypeOf(Listings)).call(this));
 
-    _this.state = {
-      name: 'Joe'
-      //Binds the loopListings method to the "Listings" class so we can use it (knows which "this we are talking about")
-    };_this.loopListings = _this.loopListings.bind(_this);
+    _this.loopListings = _this.loopListings.bind(_this);
     return _this;
   }
 
@@ -941,7 +944,7 @@ var Listings = function (_Component) {
         _react2.default.createElement(
           'section',
           { className: 'search-area' },
-          _react2.default.createElement('input', { type: 'text', name: 'search', onChange: this.props.change })
+          _react2.default.createElement('input', { type: 'text', name: 'search', placeholder: 'Find your perfect home', onChange: this.props.change })
         ),
         _react2.default.createElement(
           'section',

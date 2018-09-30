@@ -3,9 +3,6 @@ import React, { Component} from 'react'
 export default class Listings extends Component {
   constructor () {
     super()
-    this.state = {
-      name: 'Joe'
-    }
     //Binds the loopListings method to the "Listings" class so we can use it (knows which "this we are talking about")
     this.loopListings = this.loopListings.bind(this);
   }
@@ -107,7 +104,7 @@ export default class Listings extends Component {
     return (
       <section id="listings">
         <section className="search-area">
-          <input type="text" name="search" onChange={this.props.change}/>
+          <input type="text" name="search" placeholder="Find your perfect home" onChange={this.props.change}/>
         </section>
         <section className="sortby-area">
           <div className="results">{this.props.globalState.filteredData.length} results found</div>

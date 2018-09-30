@@ -254,8 +254,8 @@ select {
   max-width: 150px;
   transition: background 0.3s ease-in-out;
   //Changes to pink and to a pointer when hovering
-  &hover{
-    background: $pink;
+  &:hover{
+    background: $burgundy;
     cursor: pointer;
   }
 }
@@ -276,7 +276,7 @@ select {
       &.active{
         color: white;
         font-weight: 700;
-        background: $pink;
+        background: $burgundy;
         cursor: pointer;
       }
     }

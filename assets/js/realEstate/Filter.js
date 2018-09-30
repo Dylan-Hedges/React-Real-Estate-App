@@ -3,9 +3,6 @@ import React, { Component} from 'react'
 export default class Filter extends Component {
   constructor () {
     super()
-    this.state = {
-      name: 'Joe'
-    }
     this.cities = this.cities.bind(this)
     this.homeTypes = this.homeTypes.bind(this)
     this.bedrooms = this.bedrooms.bind(this)

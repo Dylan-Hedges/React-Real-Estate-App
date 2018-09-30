@@ -14,12 +14,17 @@ export default class Header extends Component {
   render () {
     return (
       <header>
-        <div className="logo"> Logo </div>
+      <div>
+        <a href="#" className="logo">
+          Everyday Homes
+        </a>
+      </div>
         <nav>
-          <a href="#">Create Ads</a>
-          <a href="#">About Us</a>
-          <a href="#">Login</a>
-          <a href="#" className="register-btn">Register</a>
+          <a href="#">Buy</a>
+          <a href="#">Sell</a>
+          <a href="#">Rent</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
         </nav>
       </header>)
   }

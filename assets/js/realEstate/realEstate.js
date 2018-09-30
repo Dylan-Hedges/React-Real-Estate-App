@@ -10,7 +10,6 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      name: 'Joe',
       listingsData,
       city: 'All',
       homeType: 'All',
@@ -26,7 +25,7 @@ class App extends Component {
       filteredData: listingsData,
       populateFormsData: '',
       sortby: 'price-dsc',
-      view: 'long',
+      view: 'box',
       search: ''
     }
     //2. Bind it to the class
