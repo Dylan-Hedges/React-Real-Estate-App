@@ -450,7 +450,7 @@ var Filter = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         "section",
-        { id: "filter", className: "col-2 col-sm-2 col-md-2" },
+        { id: "filter", className: "col-2 col-sm-2 col-md-2 col-lg-2" },
         _react2.default.createElement(
           "div",
           { className: "inside" },
@@ -500,7 +500,7 @@ var Filter = function (_Component) {
             _react2.default.createElement(
               "span",
               { className: "title" },
-              "Price"
+              "Price $"
             ),
             _react2.default.createElement("input", { type: "text", name: "min_price", className: "min-price", onChange: this.props.change, value: this.props.globalState.min_price }),
             _react2.default.createElement("input", { type: "text", name: "max_price", className: "max-price", onChange: this.props.change, value: this.props.globalState.max_price })
@@ -511,7 +511,7 @@ var Filter = function (_Component) {
             _react2.default.createElement(
               "span",
               { className: "title" },
-              "Floor Space"
+              "Floor Space ft\xB2"
             ),
             _react2.default.createElement("input", { type: "text", name: "min_floor_space", className: "min-floor-space", onChange: this.props.change, value: this.props.globalState.min_floor_space }),
             _react2.default.createElement("input", { type: "text", name: "max_floor_space", className: "max-floor-space", onChange: this.props.change, value: this.props.globalState.max_floor_space })
@@ -955,7 +955,7 @@ var Listings = function (_Component) {
             'div',
             { className: 'results' },
             this.props.globalState.filteredData.length,
-            ' results found'
+            ' homes found'
           ),
           _react2.default.createElement(
             'div',

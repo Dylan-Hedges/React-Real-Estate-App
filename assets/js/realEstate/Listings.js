@@ -107,7 +107,7 @@ export default class Listings extends Component {
           <input type="text" name="search" placeholder="Find your perfect home" onChange={this.props.change}/>
         </section>
         <section className="sortby-area">
-          <div className="results">{this.props.globalState.filteredData.length} results found</div>
+          <div className="results">{this.props.globalState.filteredData.length} homes found</div>
           <div className="sort-options">
             <select name="sortby" className="sortby" onChange={this.props.change}>
               <option value="price-dsc">Lowest Price</option>

@@ -44,7 +44,7 @@ export default class Filter extends Component {
   //"onChange={this.props.change}" onChange is default JS method (do something on a change),in this case whenever the user makes a change execute the "change" method which is passed in as props from realEsate.js
   render () {
     return (
-      <section id="filter" className="col-2 col-sm-2 col-md-2">
+      <section id="filter" className="col-2 col-sm-2 col-md-2 col-lg-2">
         <div className="inside">
         <label htmlFor="city" className="title">City</label>
         <select name="city" className="filters city" onChange={this.props.change}>
@@ -61,12 +61,12 @@ export default class Filter extends Component {
           {this.bedrooms()}
         </select>
         <div className="filters price">
-          <span className="title">Price</span>
+          <span className="title">Price $</span>
           <input type="text" name="min_price" className="min-price" onChange={this.props.change} value={this.props.globalState.min_price}/>
           <input type="text" name="max_price" className="max-price" onChange={this.props.change} value={this.props.globalState.max_price}/>
         </div>
         <div className="filters floor-space">
-          <span className="title">Floor Space</span>
+          <span className="title">Floor Space ft&sup2;</span>
           <input type="text" name="min_floor_space" className="min-floor-space" onChange={this.props.change} value={this.props.globalState.min_floor_space}/>
           <input type="text" name="max_floor_space" className="max-floor-space" onChange={this.props.change} value={this.props.globalState.max_floor_space}/>
         </div>
