@@ -10,6 +10,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var listingsData = [{
+  name: "John Samson",
+  postedDate: "04/03/2018",
   address: '97 Toronto Avenue',
   city: 'Toronto',
   state: 'ON',
@@ -20,6 +22,8 @@ var listingsData = [{
   homeType: 'Apartment',
   image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg'
 }, {
+  name: "Nina Smith",
+  postedDate: "06/08/2018",
   address: '540 New York Road',
   city: 'Ridgewood',
   state: 'NY',
@@ -30,6 +34,8 @@ var listingsData = [{
   homeType: 'Studio',
   image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg'
 }, {
+  name: "Gary Arnold",
+  postedDate: "03/09/2016",
   address: '82 San Francisco Road',
   city: 'San Francisco',
   state: 'CA',
@@ -40,6 +46,8 @@ var listingsData = [{
   homeType: 'House',
   image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56589_11491_003.jpg'
 }, {
+  name: "Rose Lucero",
+  postedDate: "02/02/2017",
   address: '102 Vancouver Avenue',
   city: 'Vancouver',
   state: 'BC',
@@ -50,6 +58,8 @@ var listingsData = [{
   homeType: 'Studio',
   image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg'
 }, {
+  name: "Cory Kirkpatrick",
+  postedDate: "12/08/2017",
   address: '12 Chicago Road',
   city: 'Chicago',
   state: 'IL',
@@ -60,6 +70,8 @@ var listingsData = [{
   homeType: 'House',
   image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg'
 }, {
+  name: "Martina Salter",
+  postedDate: "05/23/2018",
   address: '1234 Miami Street',
   city: 'Miami',
   state: 'FL',
@@ -70,6 +82,8 @@ var listingsData = [{
   homeType: 'Apartment',
   image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg'
 }, {
+  name: "Christian Gonzalez",
+  postedDate: "28/01/2017",
   address: '95 Texas Road',
   city: 'Austin',
   state: 'TX',
@@ -80,6 +94,8 @@ var listingsData = [{
   homeType: 'Ranch',
   image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56589_11491_003.jpg'
 }, {
+  name: "Brandan Whitworth",
+  postedDate: "11/06/2016",
   address: '567 Arizona Avenue',
   city: 'Pheonix',
   state: 'AZ',
@@ -776,12 +792,12 @@ var Listings = function (_Component) {
                       _react2.default.createElement(
                         'span',
                         { className: 'user-name' },
-                        'Nina Smith'
+                        listing.name
                       ),
                       _react2.default.createElement(
                         'span',
                         { className: 'post-date' },
-                        '05/08/2017'
+                        listing.postedDate
                       )
                     ),
                     _react2.default.createElement(
@@ -872,12 +888,12 @@ var Listings = function (_Component) {
                       _react2.default.createElement(
                         'span',
                         { className: 'user-name' },
-                        'Nina Smith'
+                        listing.name
                       ),
                       _react2.default.createElement(
                         'span',
                         { className: 'post-date' },
-                        '05/08/2017'
+                        listing.postedDate
                       )
                     ),
                     _react2.default.createElement(
@@ -920,6 +936,7 @@ var Listings = function (_Component) {
                 _react2.default.createElement(
                   'span',
                   { className: 'price' },
+                  '$',
                   listing.price
                 ),
                 _react2.default.createElement(

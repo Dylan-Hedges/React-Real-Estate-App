@@ -27,8 +27,8 @@ export default class Listings extends Component {
                      </div>
                      <div className="col-md-9">
                        <div className="user-details">
-                         <span className="user-name">Nina Smith</span>
-                         <span className="post-date">05/08/2017</span>
+                       <span className="user-name">{listing.name}</span>
+                       <span className="post-date">{listing.postedDate}</span>
                        </div>
                        <div className="listing-details">
                          <div className="floor-space">
@@ -68,8 +68,8 @@ export default class Listings extends Component {
                    </div>
                    <div className="col-md-9">
                      <div className="user-details">
-                       <span className="user-name">Nina Smith</span>
-                       <span className="post-date">05/08/2017</span>
+                       <span className="user-name">{listing.name}</span>
+                       <span className="post-date">{listing.postedDate}</span>
                      </div>
                      <div className="listing-details">
                        <div className="floor-space">
@@ -88,7 +88,7 @@ export default class Listings extends Component {
                  </div>
                </div>
                <div className="bottom-info">
-                 <span className="price">{listing.price}</span>
+                 <span className="price">${listing.price}</span>
                  <span className="location">
                    <i className="fa fa-map-marker"></i> {listing.city} {listing.state}
                  </span>
