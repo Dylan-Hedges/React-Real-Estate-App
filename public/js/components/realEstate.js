@@ -20,7 +20,8 @@ var listingsData = [{
   floorSpace: 700,
   extras: ['elevator', 'gym'],
   homeType: 'Apartment',
-  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg'
+  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg',
+  userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
 }, {
   name: "Nina Smith",
   postedDate: "06/08/2018",
@@ -32,7 +33,8 @@ var listingsData = [{
   floorSpace: 2000,
   extras: ['pool', 'gym'],
   homeType: 'Studio',
-  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg'
+  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg',
+  userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
 }, {
   name: "Gary Arnold",
   postedDate: "03/09/2016",
@@ -44,7 +46,8 @@ var listingsData = [{
   floorSpace: 4300,
   extras: ['garden', 'pool'],
   homeType: 'House',
-  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56589_11491_003.jpg'
+  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56589_11491_003.jpg',
+  userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
 }, {
   name: "Rose Lucero",
   postedDate: "02/02/2017",
@@ -56,7 +59,8 @@ var listingsData = [{
   floorSpace: 6000,
   extras: ['study', 'gym'],
   homeType: 'Studio',
-  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg'
+  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg',
+  userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
 }, {
   name: "Cory Kirkpatrick",
   postedDate: "12/08/2017",
@@ -68,7 +72,8 @@ var listingsData = [{
   floorSpace: 1200,
   extras: ['garden', 'gym'],
   homeType: 'House',
-  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg'
+  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg',
+  userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
 }, {
   name: "Martina Salter",
   postedDate: "05/23/2018",
@@ -80,7 +85,8 @@ var listingsData = [{
   floorSpace: 1100,
   extras: ['pool', 'bar'],
   homeType: 'Apartment',
-  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg'
+  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg',
+  userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
 }, {
   name: "Christian Gonzalez",
   postedDate: "28/01/2017",
@@ -92,7 +98,8 @@ var listingsData = [{
   floorSpace: 5300,
   extras: ['gym', 'pool'],
   homeType: 'Ranch',
-  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56589_11491_003.jpg'
+  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56589_11491_003.jpg',
+  userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
 }, {
   name: "Brandan Whitworth",
   postedDate: "11/06/2016",
@@ -104,7 +111,8 @@ var listingsData = [{
   floorSpace: 6300,
   extras: ['garden', 'study'],
   homeType: 'Ranch',
-  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg'
+  image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg',
+  userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
 }];
 
 exports.default = listingsData;
@@ -781,7 +789,7 @@ var Listings = function (_Component) {
                   _react2.default.createElement(
                     'div',
                     { className: 'col-md-3' },
-                    _react2.default.createElement('div', { className: 'user-img' })
+                    _react2.default.createElement('div', { className: 'user-img', style: { background: 'url("' + listing.userImage + '") no-repeat center center' } })
                   ),
                   _react2.default.createElement(
                     'div',
@@ -829,7 +837,7 @@ var Listings = function (_Component) {
                     _react2.default.createElement(
                       'div',
                       { className: 'view-btn' },
-                      'View Listing'
+                      'Map View'
                     )
                   )
                 )
@@ -877,7 +885,7 @@ var Listings = function (_Component) {
                   _react2.default.createElement(
                     'div',
                     { className: 'col-md-3' },
-                    _react2.default.createElement('div', { className: 'user-img' })
+                    _react2.default.createElement('div', { className: 'user-img-long', style: { background: 'url("' + listing.userImage + '") no-repeat center center' } })
                   ),
                   _react2.default.createElement(
                     'div',

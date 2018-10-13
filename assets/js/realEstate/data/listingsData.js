@@ -13,7 +13,8 @@ var listingsData = [
       'gym'
     ],
     homeType: 'Apartment',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg'
+    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg',
+    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
   },
   {
     name:"Nina Smith",
@@ -29,7 +30,8 @@ var listingsData = [
       'gym'
     ],
     homeType: 'Studio',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg'
+    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg',
+    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
   },
   {
     name:"Gary Arnold",
@@ -45,7 +47,8 @@ var listingsData = [
       'pool'
     ],
     homeType: 'House',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56589_11491_003.jpg'
+    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56589_11491_003.jpg',
+    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
   },
   {
     name:"Rose Lucero",
@@ -61,7 +64,8 @@ var listingsData = [
       'gym'
     ],
     homeType: 'Studio',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg'
+    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg',
+    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
   },
   {
     name:"Cory Kirkpatrick",
@@ -77,7 +81,8 @@ var listingsData = [
       'gym'
     ],
     homeType: 'House',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg'
+    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg',
+    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
   },
   {
     name:"Martina Salter",
@@ -93,7 +98,8 @@ var listingsData = [
       'bar'
     ],
     homeType: 'Apartment',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg'
+    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg',
+    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
   },
   {
     name:"Christian Gonzalez",
@@ -109,7 +115,8 @@ var listingsData = [
       'pool'
     ],
     homeType: 'Ranch',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56589_11491_003.jpg'
+    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56589_11491_003.jpg',
+    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
   },
   {
     name:"Brandan Whitworth",
@@ -125,7 +132,8 @@ var listingsData = [
       'study'
     ],
     homeType: 'Ranch',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg'
+    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg',
+    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
   }
 ]
 

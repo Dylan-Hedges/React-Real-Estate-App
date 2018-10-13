@@ -23,7 +23,7 @@ export default class Listings extends Component {
                  <span className="address">{listing.address}</span>
                    <div className="details">
                      <div className="col-md-3">
-                       <div className="user-img"></div>
+                      <div className="user-img" style={{background: `url("${listing.userImage}") no-repeat center center`} }></div>
                      </div>
                      <div className="col-md-9">
                        <div className="user-details">
@@ -41,7 +41,7 @@ export default class Listings extends Component {
                         </div>
                        </div>
                        <div className="view-btn">
-                         View Listing
+                         Map View
                        </div>
                      </div>
                    </div>
@@ -64,7 +64,7 @@ export default class Listings extends Component {
                <span className="address">{listing.address}</span>
                  <div className="details">
                    <div className="col-md-3">
-                     <div className="user-img"></div>
+                   <div className="user-img-long" style={{background: `url("${listing.userImage}") no-repeat center center`} }></div>
                    </div>
                    <div className="col-md-9">
                      <div className="user-details">
