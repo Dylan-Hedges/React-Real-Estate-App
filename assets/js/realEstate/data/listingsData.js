@@ -13,8 +13,10 @@ var listingsData = [
       'gym'
     ],
     homeType: 'Apartment',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg',
-    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
+    image: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto389x286.jpeg',
+    imageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto1553x289.jpeg',
+    userImage: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/johnsamson50x50.jpeg',
+    userImageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/johnsamson80x80.jpeg'
   },
   {
     name:"Nina Smith",
@@ -30,8 +32,10 @@ var listingsData = [
       'gym'
     ],
     homeType: 'Studio',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg',
-    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
+    image: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto389x286.jpeg',
+    imageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto1553x289.jpeg',
+    userImage: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/ninasmith50x50.jpeg',
+    userImageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/ninasmith80x80.jpeg'
   },
   {
     name:"Gary Arnold",
@@ -47,8 +51,10 @@ var listingsData = [
       'pool'
     ],
     homeType: 'House',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56589_11491_003.jpg',
-    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
+    image: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto389x286.jpeg',
+    imageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto1553x289.jpeg',
+    userImage: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/ninasmith50x50.jpeg',
+    userImageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/ninasmith80x80.jpeg'
   },
   {
     name:"Rose Lucero",
@@ -64,8 +70,10 @@ var listingsData = [
       'gym'
     ],
     homeType: 'Studio',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg',
-    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
+    image: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto389x286.jpeg',
+    imageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto1553x289.jpeg',
+    userImage: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/ninasmith50x50.jpeg',
+    userImageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/ninasmith80x80.jpeg'
   },
   {
     name:"Cory Kirkpatrick",
@@ -81,8 +89,10 @@ var listingsData = [
       'gym'
     ],
     homeType: 'House',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56587_11491_001.jpg',
-    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
+    image: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto389x286.jpeg',
+    imageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto1553x289.jpeg',
+    userImage: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/johnsamson50x50.jpeg',
+    userImageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/johnsamson80x80.jpeg'
   },
   {
     name:"Martina Salter",
@@ -98,8 +108,10 @@ var listingsData = [
       'bar'
     ],
     homeType: 'Apartment',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg',
-    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
+    image: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto389x286.jpeg',
+    imageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto1553x289.jpeg',
+    userImage: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/ninasmith50x50.jpeg',
+    userImageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/ninasmith80x80.jpeg'
   },
   {
     name:"Christian Gonzalez",
@@ -115,8 +127,10 @@ var listingsData = [
       'pool'
     ],
     homeType: 'Ranch',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56589_11491_003.jpg',
-    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
+    image: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto389x286.jpeg',
+    imageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto1553x289.jpeg',
+    userImage: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/johnsamson50x50.jpeg',
+    userImageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/johnsamson80x80.jpeg'
   },
   {
     name:"Brandan Whitworth",
@@ -132,8 +146,10 @@ var listingsData = [
       'study'
     ],
     homeType: 'Ranch',
-    image: 'https://07f138315bb5e97f9e43-31068357019044cca7c8e84d92de0d99.ssl.cf3.rackcdn.com/1024x768/56588_11491_002.jpg',
-    userImage: 'https://media.istockphoto.com/photos/happy-laughing-man-picture-id544358212'
+    image: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto389x286.jpeg',
+    imageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/toronto1553x289.jpeg',
+    userImage: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/johnsamson50x50.jpeg',
+    userImageLong: 'https://s3.ca-central-1.amazonaws.com/reactrealestateapp/johnsamson80x80.jpeg'
   }
 ]
 

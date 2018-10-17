@@ -1,11 +1,10 @@
 {
   "name": "CodingPhase-StarterKit",
   "version": "1.0.0",
-  "description": "Super Cool Framework",
+  "description": "Real Estate App",
   "main": "index.js",
-  "author": "joe santos garcia",
+  "author": "Dylan Hedges",
   "license": "MIT",
-  "homepage": "http://rocky.codingphase.com/",
   "dependencies": {
     "axios": "^0.16.1",
     "babel-core": "^6.24.1",
@@ -42,7 +41,8 @@
     "production": "./node_modules/.bin/webpack -p",
     "watch": "gulp",
     "sass": "gulp styles",
-    "js": "gulp webpack"
+    "js": "gulp webpack",
+    "start":"npm run watch"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",

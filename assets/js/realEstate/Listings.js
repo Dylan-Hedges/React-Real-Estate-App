@@ -60,11 +60,11 @@ export default class Listings extends Component {
         return (
           <div className="col-md-12 col-lg-12" key={index}>
            <div className="listing">
-             <div className="listing-img" style={{background: `url("${listing.image}") no-repeat center center`} }>
+             <div className="listing-img" style={{background: `url("${listing.imageLong}") no-repeat center center`} }>
                <span className="address">{listing.address}</span>
                  <div className="details">
                    <div className="col-md-3">
-                   <div className="user-img-long" style={{background: `url("${listing.userImage}") no-repeat center center`} }></div>
+                   <div className="user-img-long" style={{background: `url("${listing.userImageLong}") no-repeat center center`} }></div>
                    </div>
                    <div className="col-md-9">
                      <div className="user-details">
